@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modal example{% endblock %}
+
+{% block body %}
+<h1>This example can submit forms in modals on different routes</h1>
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createPersonModal">
+  Create Person
+</button>
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createMeetingModal">
+  Create Meeting
+</button>
+{% endblock %}
+
+{% block modals %}
+{{ render(controller('App\\Controller\\MeetingController::create')) }}
+{{ render(controller('App\\Controller\\PersonController::create')) }}
+{% endblock %}
